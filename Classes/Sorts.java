@@ -44,4 +44,18 @@ public class Sorts {
     }
 
 
+    public int[] countSort(int[] arr, int[] rangeArr) {
+        for (int e : arr) {
+            rangeArr[e]++;
+        }
+        int k = 0;
+        for (int i = 0; i < rangeArr.length; i++) {
+            for (int j = k; j < rangeArr[i]; j++) {
+                arr[j] = i;
+                k++;
+            }
+        }
+        return arr;
+    }
+
 }
