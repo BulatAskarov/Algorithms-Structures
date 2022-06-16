@@ -25,4 +25,23 @@ public class Sorts {
         return count;
     }
 
+    public int eratos(int n) {
+        int count = 0;
+        boolean[] arr = new boolean[n + 1];
+        for (int i = 2; i <= n; i++) {
+            arr[i] = true;
+        }
+
+        for (int i = 2; i <= n; i++) {
+            if (arr[i]) {
+               count++;
+                for (int j = 2 * i; j <= n; j += i) {
+                    arr[j] = false;
+                }
+            }
+        }
+        return count;
+    }
+
+
 }
