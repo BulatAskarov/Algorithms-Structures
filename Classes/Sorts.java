@@ -108,5 +108,24 @@ public class Sorts {
         return arr;
     }
 
+    public int[] mergeSort(int[] arr1, int[] arr2){
+        int l = arr1.length + arr2.length;
+        int m = 0;
+        int n = 0;
+        int[] res = new int[l];
+        for (int i = 0; i < l; i++) {
+            if (arr1[m] > arr2[n]) {
+                res[i] = arr2[n];
+                n++;
+            } else {
+                res[i] = arr1[m];
+                m++;
+            }
+        }
+        return res;
+    }
+
+
+    
 
 }
